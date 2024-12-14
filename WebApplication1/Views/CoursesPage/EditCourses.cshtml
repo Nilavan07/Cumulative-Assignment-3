@@ -1,0 +1,35 @@
+﻿@model cumulative_assingment_1.Models.Course
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/CoursesPage/ShowCourses/@Model.CourseId">Back</a>
+    </nav>
+    <h2>New Course</h2>
+    <form method="POST" action="/CoursesPage/Update/@Model.CourseId">
+        <div class="inputrow">
+            <label for="CourseCode">CourseCode:</label>
+            <input type="text" id="CourseCode" name="CourseCode" value="@Model.CourseCode" />
+
+        </div>
+        <div class="inputrow">
+            <label for="CourseStartDate">Start Date:</label>
+            <input type="datetime" id="CourseStartDate" name="CourseStartDate" value="@Model.CourseStartDate" />
+
+        </div>
+        <div class="inputrow">
+            <label for="CourseFinishDate">Finish Date:</label>
+            <input type="datetime" id="CourseFinishDate" name="CourseFinishDate" value="@Model.CourseFinishDate" />
+        </div>
+        <div class="inputrow">
+            <label for="CourseName">Course Name:</label>
+            <input type="text" id="CourseName"  name="CourseName" value="@Model.CourseName" />
+        </div>
+        <div class="inputrow">
+            <label for="TeacherId">TeacherId:</label>
+            <input type="number" id="TeacherId" name="TeacherId" value="@Model.TeacherId" />
+        </div>
+        <div class="inputrow">
+            <input type="submit" value="Update Course" />
+        </div>
+    </form>
+</div>

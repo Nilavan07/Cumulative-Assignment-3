@@ -1,0 +1,107 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebApplication1
+build_property.RootNamespace = WebApplication1
+build_property.ProjectDir = /Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/CoursesPage/DeleteConfirmCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ291cnNlc1BhZ2UvRGVsZXRlQ29uZmlybUNvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/CoursesPage/EditCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ291cnNlc1BhZ2UvRWRpdENvdXJzZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/CoursesPage/ListCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ291cnNlc1BhZ2UvTGlzdENvdXJzZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/CoursesPage/NewCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ291cnNlc1BhZ2UvTmV3Q291cnNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/CoursesPage/ShowCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ291cnNlc1BhZ2UvU2hvd0NvdXJzZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/StudentPage/DeleteConfirmStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudFBhZ2UvRGVsZXRlQ29uZmlybVN0dWRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/StudentPage/EditStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudFBhZ2UvRWRpdFN0dWRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/StudentPage/ListStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudFBhZ2UvTGlzdFN0dWRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/StudentPage/NewStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudFBhZ2UvTmV3U3R1ZGVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/StudentPage/ShowStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3R1ZGVudFBhZ2UvU2hvd1N0dWRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/TeacherPage/DeleteConfirm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVhY2hlclBhZ2UvRGVsZXRlQ29uZmlybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/TeacherPage/EditTeacher.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVhY2hlclBhZ2UvRWRpdFRlYWNoZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/TeacherPage/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVhY2hlclBhZ2UvTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/TeacherPage/New.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVhY2hlclBhZ2UvTmV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/TeacherPage/Show.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVhY2hlclBhZ2UvU2hvdy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-4ak7nacacg

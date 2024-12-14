@@ -1,0 +1,31 @@
+@model cumulative_assingment_1.Models.Student
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/StudentPage/ShowStudent/@Model.StudentId">Back</a>
+    </nav>
+    <h2>New Student</h2>
+    <form method="POST" action="/StudentPage/Update/@Model.StudentId">
+        <div class="inputrow">
+            <label for="StudentFname">First Name:</label>
+            <input type="text" id="StudentFname" name="StudentFname" value="@Model.StudentFName" />
+
+        </div>
+        <div class="inputrow">
+            <label for="StudentLname">Last Name:</label>
+            <input type="text" id="StudentLname" name="StudentLname" value="@Model.StudentLName" />
+
+        </div>
+        <div class="inputrow">
+            <label for="StudentNumber">StudentNumber:</label>
+            <input type="text" id="StudentNumber" name="StudentNumber" value="@Model.StudentNumber" />
+        </div>
+        <div class="inputrow">
+            <label for="StudentEnrolmentDate">Enrolment Date:</label>
+            <input type="datetime" id="StudentEnrolmentDate" name="StudentEnrolmentDate" value="@Model.StudentEnrolmentDate" />
+        </div>
+        <div class="inputrow">
+            <input type="submit" value="Update Student" />
+        </div>
+    </form>
+</div>

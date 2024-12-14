@@ -1,0 +1,67 @@
+<!-- This is a form that contains all the inouts required to add a new course -->
+﻿<div id="container">
+
+    <nav>
+        <!-- A link to go back to the list of all courses -->
+        <a class="navlink" href="/CoursesPage/ListCourses">Back To Courses</a>
+    </nav>
+
+    <h2>Add a New Course</h2>
+
+    <!-- Here, action is not directing to another web page but just creating the course and adding it to database -->
+    <!-- Method is post because we don't want the details of the course to be part of the URL -->
+    <form method="POST" action="/CoursesPage/CreateCourse">
+        <div class="inputrow">
+            <label for="CourseName">Name:</label>
+            <input type="text" id="CourseName" name="CourseName" />
+
+        </div>
+        <div class="inputrow">
+            <label for="CourseCode">Course Code:</label>
+            <input type="text" id="CourseCode" name="CourseCode" />
+
+        </div>
+        <div class="inputrow">
+            <label for="TeacherId">Teacher Id:</label>
+            <input type="number" id="TeacherId" name="TeacherId" />
+
+        </div>
+        <div class="inputrow">
+            <label for="CourseStartDate">Start Date: </label>
+            <input type="date" id="CourseStartDate" name="CourseStartDate" />
+
+        </div>
+        <div class="inputrow">
+            <label for="CourseFinishDate">Finish Date: </label>
+            <input type="date" id="CourseFinishDate" name="CourseFinishDate" />
+
+        </div>
+        <div class="inputrow">
+            <input type="submit" value="Create Course" />
+        </div>
+    </form>
+</div>
+
+
+<style>
+    .inputrow {
+        margin-bottom: 10px;
+    }
+
+    .inputrow label {
+        display: inline-block;
+        width: 150px;
+    }
+
+    .inputrow input {
+        padding: 5px;
+        width: 200px;
+    }
+
+    nav a.navlink {
+        display: inline-block;
+        margin-bottom: 20px;
+        text-decoration: none;
+        color: blue;
+    }
+</style>

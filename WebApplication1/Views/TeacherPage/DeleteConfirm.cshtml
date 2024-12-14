@@ -1,0 +1,23 @@
+﻿@model cumulative_assingment_1.Models.Teacher
+
+<!-- This web page displays the question if user wants to delete the teacher permanently from the database -->
+
+<div id="container">
+
+    <nav>
+
+        <!-- This link directs you back to the page where details of the teacher are displayed -->
+        <a class="navlink" href="/TeacherPage/Show/@Model.TeacherId">Cancel</a>
+    </nav>
+
+    <h2>Are you sure you want to delete @Model.TeacherFName @Model.TeacherLName?</h2>
+    <p>This action cannot be undone.</p>
+
+    <!-- This button permanently deletes the teacher from the database, it will not direct you to any webpage -->
+    <form method="POST" action="/TeacherPage/Delete/@Model.TeacherId">
+        <button class="warning-button">
+            Confirm Delete
+        </button>
+    </form>
+
+</div>

@@ -1,0 +1,23 @@
+@model cumulative_assingment_1.Models.Course
+
+<!-- This web page displays the question if user wants to delete the course permanently from the database -->
+
+<div id="container">
+
+    <nav>
+
+        <!-- This link directs you back to the page where details of the course are displayed -->
+        <a class="navlink" href="/CoursesPage/ShowCourses/@Model.CourseId">Cancel</a>
+    </nav>
+
+    <h2>Are you sure you want to delete @Model.CourseName?</h2>
+    <p>This action cannot be undone.</p>
+
+    <!-- This button permanently deletes the course from the database, it will not direct you to any webpage -->
+    <form method="POST" action="/CoursesPage/DeleteCourse/@Model.CourseId">
+        <button class="warning-button">
+            Confirm Delete
+        </button>
+    </form>
+
+</div>

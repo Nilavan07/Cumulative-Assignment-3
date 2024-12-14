@@ -1,0 +1,62 @@
+<!-- This is a form that contains all the inouts required to add a new student -->
+﻿<div id="container">
+
+    <nav>
+        <!-- A link to go back to the list of all students -->
+        <a class="navlink" href="/StudentPage/ListStudent">Back To Students</a>
+    </nav>
+
+    <h2>Add a New Student</h2>
+
+    <!-- Here, action is not directing to another web page but just creating the student and adding it to database -->
+    <!-- Method is post because we don't want the details of the student to be part of the URL -->
+    <form method="POST" action="/StudentPage/CreateStudent">
+        <div class="inputrow">
+            <label for="StudentFname">First Name:</label>
+            <input type="text" id="StudentFname" name="StudentFname" />
+
+        </div>
+        <div class="inputrow">
+            <label for="StudentLname">Last Name:</label>
+            <input type="text" id="StudentLname" name="StudentLname" />
+
+        </div>
+        <div class="inputrow">
+            <label for="StudentNumber">Student Number:</label>
+            <input type="number" id="StudentNumber" name="StudentNumber" />
+
+        </div>
+        <div class="inputrow">
+            <label for="StudentEnrolmentDate">Enrolment Date:</label>
+            <input type="date" id="StudentEnrolmentDate" name="StudentEnrolmentDate" />
+
+        </div>
+        <div class="inputrow">
+            <input type="submit" value="Create Student" />
+        </div>
+    </form>
+</div>
+
+
+<style>
+    .inputrow {
+        margin-bottom: 10px;
+    }
+
+    .inputrow label {
+        display: inline-block;
+        width: 150px;
+    }
+
+    .inputrow input {
+        padding: 5px;
+        width: 200px;
+    }
+
+    nav a.navlink {
+        display: inline-block;
+        margin-bottom: 20px;
+        text-decoration: none;
+        color: blue;
+    }
+</style>

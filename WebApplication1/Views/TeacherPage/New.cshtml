@@ -1,0 +1,68 @@
+﻿<!-- This is a form that contains all the inouts required to add a new teacher -->
+
+﻿<div id="container">
+
+    <nav>
+        <!-- A link to go back to the list of all teachers -->
+        <a class="navlink" href="/TeacherPage/List">Back To Teachers</a>
+    </nav>
+
+    <h2>Add a New Teacher</h2>
+
+    <!-- Here, action is not directing to another web page but just creating the teacher and adding it to database -->
+    <!-- Method is post because we don't want the details of the teacher to be part of the URL -->
+    <form method="POST" action="/TeacherPage/Create">
+        <div class="inputrow">
+            <label for="TeacherFname">First Name:</label>
+            <input type="text" id="TeacherFname" name="TeacherFname" />
+
+        </div>
+        <div class="inputrow">
+            <label for="TeacherLname">Last Name:</label>
+            <input type="text" id="TeacherLname" name="TeacherLname" />
+
+        </div>
+        <div class="inputrow">
+            <label for="TeacherHireDate">Hire Date:</label>
+            <input type="date" id="TeacherHireDate" name="TeacherHireDate" />
+
+        </div>
+        <div class="inputrow">
+            <label for="EmployeeNumber">Employee Number:</label>
+            <input type="number" id="EmployeeNumber" name="EmployeeNumber" />
+
+        </div>
+        <div class="inputrow">
+            <label for="TeacherSalary">Salary:</label>
+            <input type="number" id="TeacherSalary" name="TeacherSalary" />
+
+        </div>
+        <div class="inputrow">
+            <input type="submit" value="Create Teacher" />
+        </div>
+    </form>
+</div>
+
+
+<style>
+.inputrow {
+    margin-bottom: 10px;
+}
+
+.inputrow label {
+    display: inline-block;
+    width: 150px;
+}
+
+.inputrow input {
+    padding: 5px;
+    width: 200px;
+}
+
+nav a.navlink {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: blue;
+}
+</style>
