@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using cumulative_assingment_1.Models;
 using System;
@@ -25,9 +25,6 @@ namespace cumulative_assingment_1.Controllers
         /// When we click on Students in Navigation bar on Home page, We are directed to a webpage that lists all students in the database student
         /// </summary>
         /// <example>
-        /// GET api/Student/ListStudents -> [{"StudentFname":"Mohit", "StudentLName":"Bansal"},{"StudentFname":"Darshan", "StudentLName":"Malhotra"},.............]
-        /// GET api/Student/ListStudents -> [{"StudentFname":"Aakriti", "StudentLName":"Garg"},{"StudentFname":"Himanshi", "StudentLName":"Goyal"},.............]
-        /// </example>
         /// <returns>
         /// A list all the students in the database student
         /// </returns>
@@ -166,7 +163,11 @@ namespace cumulative_assingment_1.Controllers
             //Return the Information of the SelectedStudent
             return SelectedStudent;
         }
-    /// <summary>
+
+
+
+
+        /// <summary>
         /// The method adds a new student to the database by inserting a record into the students table and returns the ID of the inserted student
         /// </summary>
         /// <param name="StudentData"> An object containing the details of the student to be added, including first name, last name, employee number, salary, and hire date </param>
@@ -247,7 +248,9 @@ namespace cumulative_assingment_1.Controllers
             }
 
         }
-     /// <summary>
+
+
+        /// <summary>
         /// Updates an Student in the database. Data is Student object, request query contains ID
         /// </summary>
         /// <param name="StudentData">Student Object</param>
@@ -295,5 +298,3 @@ namespace cumulative_assingment_1.Controllers
 
 
 }
-
-

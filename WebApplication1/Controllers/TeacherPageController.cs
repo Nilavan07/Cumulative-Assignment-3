@@ -1,15 +1,17 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using cumulative_assingment_1.Models;
-using cumulative_assingment_1.Controllers;
 
 namespace cumulative_assingment_1.Controllers
 {
     public class TeacherPageController : Controller
     {
 
-        // currently relying on the API to retrieve author information
-        // this is a simplified example. In practice, both the TeacherAPI and TeacherPage controllers
+        // API is responsible for gathering the information from the Database and MVC is responsible for giving an HTTP response
+        // as a web page that shows the information written in the View
+
+        // In practice, both the TeacherAPI and TeacherPage controllers
         // should rely on a unified "Service", with an explicit interface
+
         private readonly TeacherAPIController _api;
 
         public TeacherPageController(TeacherAPIController api)
@@ -17,20 +19,45 @@ namespace cumulative_assingment_1.Controllers
             _api = api;
         }
 
-        //GET : TeacherPage/List
+
+        /// <summary>
+        /// When we click on the Teachers button in Navugation Bar, it returns the web page displaying all the teachers in the Database school
+        /// </summary>
+        /// <returns>
+        /// List of all Teachers in the Database school
+        /// </returns>
+        /// <example>
+        /// GET : api/TeacherPage/List  ->  Gives the list of all Teachers in the Database school
+        /// </example>
+        
         public IActionResult List()
         {
             List<Teacher> Teachers = _api.ListTeachers();
             return View(Teachers);
         }
 
-        //GET : TeacherPage/Show/{id}
+
+
+        /// <summary>
+        /// When we Select one Teacher from the list, it returns the web page displaying the information of the SelectedTeacher from the database school
+        /// </summary>
+        /// <returns>
+        /// Information of the SelectedTeacher from the database school
+        /// </returns>
+        /// <example>
+        /// GET :api/TeacherPage/Show/{id}  ->  Gives the information of the SelectedTeacher
+        /// </example>
+        /// 
         public IActionResult Show(int id)
         {
             Teacher SelectedTeacher = _api.FindTeacher(id);
             return View(SelectedTeacher);
         }
- // GET : TeacherPage/New
+
+
+
+
+        // GET : TeacherPage/New
         [HttpGet]
         public IActionResult New(int id)
         {
@@ -79,7 +106,17 @@ namespace cumulative_assingment_1.Controllers
         }
 
 
-    
+
+        // GET : TeacherPage/Edit/{id}
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            Teacher SelectedTeacher = _api.FindTeacher(id);
+            return View(SelectedTeacher);
+        }
+
+
+
         // POST: TeacherPage/Update/{id}
         [HttpPost]
         public IActionResult Update(int id, string TeacherFName, string TeacherLName, decimal TeacherSalary, string EmployeeNumber, DateTime TeacherHireDate)
@@ -101,8 +138,5 @@ namespace cumulative_assingment_1.Controllers
         }
 
 
-
     }
-
 }
-

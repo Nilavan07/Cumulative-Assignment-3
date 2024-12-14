@@ -1767,11 +1767,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/WebApplication1.csproj",
+      "projectUniqueName": "/Users/nilavan/Desktop/Cumulative-Assignment-3/WebApplication1/WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/WebApplication1.csproj",
+      "projectPath": "/Users/nilavan/Desktop/Cumulative-Assignment-3/WebApplication1/WebApplication1.csproj",
       "packagesPath": "/Users/nilavan/.nuget/packages/",
-      "outputPath": "/Users/nilavan/Desktop/Cumulative assingment 1/WebApplication1/obj/",
+      "outputPath": "/Users/nilavan/Desktop/Cumulative-Assignment-3/WebApplication1/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/nilavan/.nuget/NuGet/NuGet.Config"

@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using cumulative_assingment_1.Models;
 using System;
@@ -12,23 +12,27 @@ namespace cumulative_assingment_1.Controllers
     [ApiController]
     public class TeacherAPIController : ControllerBase
     {
-        private readonly SchoolDbContext _context;
-        // dependency injection of database context
-        public TeacherAPIController(SchoolDbContext context)
+
+        // This is dependancy injection
+        private readonly SchoolDbContext _schoolcontext;
+        public TeacherAPIController(SchoolDbContext schoolcontext)
         {
-            _context = context;
+            _schoolcontext = schoolcontext;
         }
 
 
         /// <summary>
-        /// Returns a list of Teachers in the system
+        /// When we click on Teachers in Navigation bar on Home page, We are directed to a webpage that lists all teachers in the database school
         /// </summary>
         /// <example>
-        /// GET api/Teacher/ListTeachers -> [{"TeacherId":1,"TeacherFname":"Brian", "TeacherLName":"Smith"},{"TeacherId":2,"TeacherFname":"Jillian", "TeacherLName":"Montgomery"},..]
+        /// GET api/Teacher/ListTeachers -> [{"TeacherFname":"Manik", "TeacherLName":"Bansal"},{"TeacherFname":"Asha", "TeacherLName":"Bansal"},.............]
+        /// GET api/Teacher/ListTeachers -> [{"TeacherFname":"Apurva", "TeacherLName":"Gupta"},{"TeacherFname":"Himani", "TeacherLName":"Garg"},.............]
         /// </example>
         /// <returns>
-        /// A list of author objects 
+        /// A list all the teachers in the database school
         /// </returns>
+
+
         [HttpGet]
         [Route(template: "ListTeachers")]
         public List<Teacher> ListTeachers()
@@ -36,23 +40,31 @@ namespace cumulative_assingment_1.Controllers
             // Create an empty list of Teachers
             List<Teacher> Teachers = new List<Teacher>();
 
-            // 'using' will close the connection after the code executes
-            using (MySqlConnection Connection = _context.AccessDatabase())
+            // 'using' keyword is used that will close the connection by itself after executing the code given inside
+            using (MySqlConnection Connection = _schoolcontext.AccessDatabase())
             {
+
+                // Opening the connection
                 Connection.Open();
-                //Establish a new command (query) for our database
+
+
+                // Establishing a new query for our database 
                 MySqlCommand Command = Connection.CreateCommand();
 
-                //SQL QUERY
+
+                // Writing the SQL Query we want to give to database to access information
                 Command.CommandText = "select * from teachers";
 
-                // Gather Result Set of Query into a variable
+
+                // Storing the Result Set query in a variable
                 using (MySqlDataReader ResultSet = Command.ExecuteReader())
                 {
-                    //Loop Through Each Row the Result Set
+
+                    // While loop is used to loop through each row in the ResultSet 
                     while (ResultSet.Read())
                     {
-                        //Access Column information by the DB column name as an index
+
+                        // Accessing the information of Teacher using the Column name as an index
                         int Id = Convert.ToInt32(ResultSet["teacherid"]);
                         string FirstName = ResultSet["teacherfname"].ToString();
                         string LastName = ResultSet["teacherlname"].ToString();
@@ -60,8 +72,9 @@ namespace cumulative_assingment_1.Controllers
                         DateTime TeacherHireDate = Convert.ToDateTime(ResultSet["hiredate"]);
                         decimal Salary = Convert.ToDecimal(ResultSet["salary"]);
 
-                        //short form for setting all properties while creating the object
-                        Teacher CurrentTeacher = new Teacher()
+
+                        // Assigning short names for properties of the Teacher
+                        Teacher EachTeacher = new Teacher()
                         {
                             TeacherId = Id,
                             TeacherFName = FirstName,
@@ -69,62 +82,79 @@ namespace cumulative_assingment_1.Controllers
                             TeacherHireDate = TeacherHireDate,
                             EmployeeNumber = EmployeeNumber,
                             TeacherSalary = Salary
-                         };
+                        };
 
-                        Teachers.Add(CurrentTeacher);
+
+                        // Adding all the values of properties of EachTeacher in Teachers List
+                        Teachers.Add(EachTeacher);
 
                     }
                 }
             }
 
 
-            //Return the final list of authors
+            //Return the final list of Teachers 
             return Teachers;
         }
 
 
         /// <summary>
-        /// Returns an author in the database by their ID
+        /// When we select one teacher , it returns information of the selected Teacher in the database by their ID 
         /// </summary>
         /// <example>
         /// GET api/Teacher/FindTeacher/3 -> {"TeacherId":3,"TeacherFname":"Sam","TeacherLName":"Cooper"}
         /// </example>
         /// <returns>
-        /// A matching author object by its ID. Empty object if Teacher not found
+        /// Information about the Teacher selected
         /// </returns>
+
+
+
         [HttpGet]
         [Route(template: "FindTeacher/{id}")]
         public Teacher FindTeacher(int id)
         {
 
-            //Empty Teacher
+            // Created an object SelectedTeacher using Teacher definition defined as Class in Models
             Teacher SelectedTeacher = new Teacher();
 
-            // 'using' will close the connection after the code executes
-            using (MySqlConnection Connection = _context.AccessDatabase())
+
+            // 'using' keyword is used that will close the connection by itself after executing the code given inside
+            using (MySqlConnection Connection = _schoolcontext.AccessDatabase())
             {
+
+                // Opening the Connection
                 Connection.Open();
-                //Establish a new command (query) for our database
+
+                // Establishing a new query for our database 
                 MySqlCommand Command = Connection.CreateCommand();
 
-                // @id is replaced with a 'sanitized' id
+
+                // @id is replaced with a 'sanitized'(masked) id so that id can be referenced
+                // without revealing the actual @id
                 Command.CommandText = "select * from teachers where teacherid=@id";
                 Command.Parameters.AddWithValue("@id", id);
 
-                // Gather Result Set of Query into a variable
+
+                // Storing the Result Set query in a variable
                 using (MySqlDataReader ResultSet = Command.ExecuteReader())
                 {
-                    //Loop Through Each Row the Result Set
+
+                    // While loop is used to loop through each row in the ResultSet 
                     while (ResultSet.Read())
                     {
-                        //Access Column information by the DB column name as an index
+
+                        // Accessing the information of Teacher using the Column name as an index
                         int Id = Convert.ToInt32(ResultSet["teacherid"]);
                         string FirstName = ResultSet["teacherfname"].ToString();
                         string LastName = ResultSet["teacherlname"].ToString();
-                        string EmployeeNumber = ResultSet["employeenumber"].ToString();                       
+                        string EmployeeNumber = ResultSet["employeenumber"].ToString();
                         DateTime TeacherHireDate = Convert.ToDateTime(ResultSet["hiredate"]);
                         decimal Salary = Convert.ToDecimal(ResultSet["salary"]);
 
+
+                        // Accessing the information of the properties of Teacher and then assigning it to the short names 
+                        // created above for all properties of the Teacher
                         SelectedTeacher.TeacherId = Id;
                         SelectedTeacher.TeacherFName = FirstName;
                         SelectedTeacher.TeacherLName = LastName;
@@ -136,9 +166,13 @@ namespace cumulative_assingment_1.Controllers
                 }
             }
 
-            //Return the final list of author names
+
+            //Return the Information of the SelectedTeacher
             return SelectedTeacher;
         }
+
+
+
         /// <summary>
         /// The method adds a new teacher to the database by inserting a record into the teachers table and returns the ID of the inserted teacher
         /// </summary>
@@ -157,7 +191,7 @@ namespace cumulative_assingment_1.Controllers
         public int AddTeacher([FromBody] Teacher TeacherData)
         {
             // 'using' keyword is used that will close the connection by itself after executing the code given inside
-            using (MySqlConnection Connection = _context.AccessDatabase())
+            using (MySqlConnection Connection = _schoolcontext.AccessDatabase())
             {
                 // Opening the Connection
                 Connection.Open();
@@ -203,7 +237,7 @@ namespace cumulative_assingment_1.Controllers
         public int DeleteTeacher(int TeacherId)
         {
             // 'using' keyword is used that will close the connection by itself after executing the code given inside
-            using (MySqlConnection Connection = _context.AccessDatabase())
+            using (MySqlConnection Connection = _schoolcontext.AccessDatabase())
             {
                 // Opening the Connection
                 Connection.Open();
@@ -221,8 +255,10 @@ namespace cumulative_assingment_1.Controllers
             }
 
         }
-    
-   
+
+
+
+
         /// <summary>
         /// Updates an Teacher in the database. Data is Teacher object, request query contains ID
         /// </summary>
@@ -242,7 +278,7 @@ namespace cumulative_assingment_1.Controllers
         public Teacher UpdateTeacher(int TeacherId, [FromBody] Teacher TeacherData)
         {
             // 'using' will close the connection after the code executes
-            using (MySqlConnection Connection = _context.AccessDatabase())
+            using (MySqlConnection Connection = _schoolcontext.AccessDatabase())
             {
                 Connection.Open();
 
@@ -260,6 +296,7 @@ namespace cumulative_assingment_1.Controllers
                 Command.Parameters.AddWithValue("@id", TeacherId);
 
                 Command.ExecuteNonQuery();
+
 
 
             }

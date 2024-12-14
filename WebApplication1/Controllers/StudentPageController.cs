@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using cumulative_assingment_1.Models;
 
 namespace cumulative_assingment_1.Controllers
@@ -53,7 +53,10 @@ namespace cumulative_assingment_1.Controllers
             Student SelectedStudent = _api.FindStudent(id);
             return View(SelectedStudent);
         }
-// GET : StudentPage/NewStudent
+
+
+
+        // GET : StudentPage/NewStudent
         [HttpGet]
         public IActionResult NewStudent(int id)
         {
@@ -97,7 +100,18 @@ namespace cumulative_assingment_1.Controllers
         }
 
 
-     // POST: StudentPage/Update/{id}
+
+        // GET : StudentPage/EditStudent/{id}
+        [HttpGet]
+        public IActionResult EditStudent(int id)
+        {
+            Student SelectedStudent = _api.FindStudent(id);
+            return View(SelectedStudent);
+        }
+
+
+
+        // POST: StudentPage/Update/{id}
         [HttpPost]
         public IActionResult Update(int id, string StudentFName, string StudentLName, string StudentNumber, DateTime StudentEnrolmentDate)
         {

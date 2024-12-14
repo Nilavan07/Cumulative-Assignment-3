@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using cumulative_assingment_1.Models;
 
 namespace cumulative_assingment_1.Controllers
@@ -45,7 +45,7 @@ namespace cumulative_assingment_1.Controllers
         /// Information of the SelectedCourse from the database school
         /// </returns>
         /// <example>
-        /// GET :api/CoursesPage/Show/{id}  ->  Gives the information of the SelectedCourse
+        /// GET :api/CoursesPage/ShowCourses/{id}  ->  Gives the information of the SelectedCourse
         /// </example>
         /// 
         public IActionResult ShowCourses(int id)
@@ -56,7 +56,7 @@ namespace cumulative_assingment_1.Controllers
 
 
 
-        // GET : CoursePage/NewCourse
+        // GET : CoursesPage/NewCourse
         [HttpGet]
         public IActionResult NewCourse(int id)
         {
@@ -65,7 +65,7 @@ namespace cumulative_assingment_1.Controllers
 
 
 
-        // POST: CoursePage/CreateCourse
+        // POST: CoursesPage/CreateCourse
         [HttpPost]
         public IActionResult CreateCourse(Course NewCourse)
         {
@@ -80,7 +80,7 @@ namespace cumulative_assingment_1.Controllers
 
 
 
-        // GET : CoursePage/DeleteConfirmCourse/{id}
+        // GET : CoursesPage/DeleteConfirmCourse/{id}
         [HttpGet]
         public IActionResult DeleteConfirmCourse(int id)
         {
@@ -95,7 +95,7 @@ namespace cumulative_assingment_1.Controllers
 
 
 
-        // POST: CoursePage/DeleteCourse/{id}
+        // POST: CoursesPage/DeleteCourse/{id}
         [HttpPost]
         public IActionResult DeleteCourse(int id)
         {
@@ -105,8 +105,19 @@ namespace cumulative_assingment_1.Controllers
         }
 
 
-     // POST: CoursesPage/Update/{id}
-     
+
+
+        // GET : CoursesPage/EditCourse/{id}
+        [HttpGet]
+        public IActionResult EditCourse(int id)
+        {
+            Course SelectedCourse = _api.FindCourse(id);
+            return View(SelectedCourse);
+        }
+
+
+
+        // POST: CoursesPage/Update/{id}
         [HttpPost]
         public IActionResult Update(int id, string CourseCode, DateTime CourseStartDate, DateTime CourseFinishDate, string CourseName, int TeacherId)
         {
@@ -128,4 +139,3 @@ namespace cumulative_assingment_1.Controllers
 
     }
 }
-

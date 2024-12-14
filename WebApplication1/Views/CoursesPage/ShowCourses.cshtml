@@ -1,4 +1,4 @@
-@model cumulative_assingment_1.Models.Course
+﻿@model cumulative_assingment_1.Models.Course
 
 <div class="course-details-container">
 
@@ -6,7 +6,7 @@
     <!-- Other link "Delete" will direct to another web page confirm if we want to delete the course permanently from our database -->
 
     <a href="/CoursesPage/ListCourses">Back to List</a> <a class="alert-warning" href="/CoursesPage/DeleteConfirmCourse/@Model.CourseId">Delete</a>
-    <a href="/CoursesPage/EditCourses/@Model.CourseId">Edit</a>
+    <a href="/CoursesPage/EditCourse/@Model.CourseId">Edit</a>
 
     <!-- Displaying the details of the selected course -->
 

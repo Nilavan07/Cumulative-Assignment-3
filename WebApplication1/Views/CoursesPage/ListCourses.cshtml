@@ -1,13 +1,14 @@
-@model IEnumerable<cumulative_assingment_1.Models.Course>
+﻿@model IEnumerable<cumulative_assingment_1.Models.Course>
 
 <!-- Displaying all the courses on the web page from where you can select any course  -->
 
 <div class="course-list">
-    <h2>Courses We Offer: </h2>
 
-  <!-- A link is added that will direct to another webpage where is a form to add a new course-->
+    <h2>Courses Offers: </h2>
+
+      <!-- A link is added that will direct to another webpage where is a form to add a new course-->
     <a style="margin-bottom:10px;" href="/CoursesPage/NewCourse">Add Course</a>
-    
+
     @foreach (cumulative_assingment_1.Models.Course Course in Model)
     {
         <div class="course-card">

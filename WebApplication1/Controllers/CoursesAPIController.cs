@@ -1,4 +1,4 @@
-using cumulative_assingment_1.Models;
+﻿using cumulative_assingment_1.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
@@ -175,12 +175,13 @@ namespace cumulative_assingment_1.Controllers
         /// The ID of the newly inserted course record
         /// </returns>
         /// <example> 
-        /// POST: api/CourseAPI/AddCourse -> 11
+        /// POST: api/CoursesAPI/AddCourse -> 11
         /// assuming that 11th record is added
         /// </example>
 
 
-[HttpPost(template: "AddCourse")]
+
+        [HttpPost(template: "AddCourse")]
         public int AddCourse([FromBody] Course CourseData)
         {
             // 'using' keyword is used that will close the connection by itself after executing the code given inside
@@ -193,10 +194,10 @@ namespace cumulative_assingment_1.Controllers
                 MySqlCommand Command = Connection.CreateCommand();
 
                 // It contains the SQL query to insert a new course into the courses table            
-                Command.CommandText = "INSERT INTO courses (coursecode, teacherid, startdate, finishdate, coursename) VALUES (@coursecode, @teacherid, @startdate, @finishdate, @coursename)";
+                Command.CommandText = "INSERT INTO courses (coursecode, courseid, startdate, finishdate, coursename) VALUES (@coursecode, @courseid, @startdate, @finishdate, @coursename)";
 
                 Command.Parameters.AddWithValue("@coursecode", CourseData.CourseCode);
-                Command.Parameters.AddWithValue("@teacherid", CourseData.TeacherId);
+                Command.Parameters.AddWithValue("@courseid", CourseData.CourseId);
                 Command.Parameters.AddWithValue("@startdate", CourseData.CourseStartDate);
                 Command.Parameters.AddWithValue("@finishdate", CourseData.CourseFinishDate);
                 Command.Parameters.AddWithValue("@coursename", CourseData.CourseName);
@@ -222,7 +223,7 @@ namespace cumulative_assingment_1.Controllers
         /// The number of rows affected by the DELETE operation
         /// </returns>
         /// <example>
-        /// DELETE: api/CourseAPI/DeleteCourse/11 -> 1
+        /// DELETE: api/CoursesAPI/DeleteCourse/11 -> 1
         /// </example>
 
         [HttpDelete(template: "DeleteCourse/{CourseId}")]
@@ -250,9 +251,6 @@ namespace cumulative_assingment_1.Controllers
         }
 
 
-
-
-    
         /// <summary>
         /// Updates an Course in the database. Data is Course object, request query contains ID
         /// </summary>
@@ -268,8 +266,6 @@ namespace cumulative_assingment_1.Controllers
         /// <returns>
         /// The updated Course object
         /// </returns>
-        
-        
         [HttpPut(template: "UpdateCourse/{CourseId}")]
         public Course UpdateCourse(int CourseId, [FromBody] Course CourseData)
         {
@@ -309,6 +305,4 @@ namespace cumulative_assingment_1.Controllers
 
 
 }
-
-
 
